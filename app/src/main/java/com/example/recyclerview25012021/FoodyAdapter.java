@@ -9,8 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class FoodyAdapter extends RecyclerView.Adapter<FoodyAdapter.FoodyViewHolder> {
