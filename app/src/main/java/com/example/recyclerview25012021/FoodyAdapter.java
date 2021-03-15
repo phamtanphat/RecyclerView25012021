@@ -35,13 +35,15 @@ public class FoodyAdapter extends RecyclerView.Adapter<FoodyAdapter.FoodyViewHol
         FoodyModel foodyModel = listModel.get(position);
         holder.imgStatus.setImageResource(R.drawable.ic_status_online);
         holder.imgBackground.setImageResource(foodyModel.getImage());
+        holder.txtName.setText(foodyModel.getName());
+        holder.txtAddress.setText(foodyModel.getAddress());
 
-//        View 0 => List.get(0)
-//        View 1 => List.get(1)
-//        View 2 => List.get(2)
-//        View 3 => List.get(3)
-//        View 4 => List.get(4)
-//        View 5 => List.get(5)
+        if (foodyModel.getSaleOffs().length == 1){
+            holder.txtSalesOff.setText(foodyModel.getSaleOffs()[0]);
+        }else{
+            holder.txtSalesOff.setText(foodyModel.getSaleOffs()[0]);
+            holder.txtSaleOffMore.setText("Xem thêm " + (foodyModel.getSaleOffs().length - 1) +" ưu đãi khác...");
+        }
     }
 
     // Trả về số lượng dòng
