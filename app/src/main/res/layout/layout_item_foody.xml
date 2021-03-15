@@ -62,7 +62,7 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/textViewName"
-                    app:layout_constraintBottom_toTopOf=""
+                    app:layout_constraintBottom_toTopOf="@id/viewSeparator"
                     android:id="@+id/textViewAddress"
                     android:text="Tòa M3-M4, 91A Nguyễn Chí Thanh (Đối diện 63 Huỳnh Thúc Kháng), Đống Đa"
                     android:layout_width="wrap_content"

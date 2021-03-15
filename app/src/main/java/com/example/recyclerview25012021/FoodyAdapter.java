@@ -15,6 +15,10 @@ public class FoodyAdapter extends RecyclerView.Adapter<FoodyAdapter.FoodyViewHol
 
     List<FoodyModel> listModel;
 
+    public FoodyAdapter(List<FoodyModel> listModel) {
+        this.listModel = listModel;
+    }
+
     @NonNull
     @Override
     public FoodyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,7 +44,7 @@ public class FoodyAdapter extends RecyclerView.Adapter<FoodyAdapter.FoodyViewHol
             holder.txtSalesOff.setText(foodyModel.getSaleOffs()[0]);
         }else{
             holder.txtSalesOff.setText(foodyModel.getSaleOffs()[0]);
-            holder.txtSaleOffMore.setText("Xem thêm " + (foodyModel.getSaleOffs().length - 1) +" ưu đãi khác...");
+            holder.txtSaleOffMore.setText("Xem thêm " + (foodyModel.getSaleOffs().length - 2) +" ưu đãi khác...");
         }
     }
 
@@ -61,8 +65,8 @@ public class FoodyAdapter extends RecyclerView.Adapter<FoodyAdapter.FoodyViewHol
 
         public FoodyViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgStatus = itemView.findViewById(R.id.imageViewBackground);
-            imgBackground = itemView.findViewById(R.id.imageStatus);
+            imgStatus = itemView.findViewById(R.id.imageStatus);
+            imgBackground = itemView.findViewById(R.id.imageViewBackground);
             txtAddress = itemView.findViewById(R.id.textViewAddress);
             txtName = itemView.findViewById(R.id.textViewName);
             txtSalesOff = itemView.findViewById(R.id.textViewSaleOff);
