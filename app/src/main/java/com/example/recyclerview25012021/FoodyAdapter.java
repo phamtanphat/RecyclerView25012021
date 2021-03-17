@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +15,7 @@ import java.util.List;
 public class FoodyAdapter extends RecyclerView.Adapter<FoodyAdapter.FoodyViewHolder> {
 
     List<FoodyModel> listModel;
+    OnItemClickRecyclerView onItemClickRecyclerView;
 
     public FoodyAdapter(List<FoodyModel> listModel) {
         this.listModel = listModel;
@@ -71,6 +73,16 @@ public class FoodyAdapter extends RecyclerView.Adapter<FoodyAdapter.FoodyViewHol
             txtName = itemView.findViewById(R.id.textViewName);
             txtSalesOff = itemView.findViewById(R.id.textViewSaleOff);
             txtSaleOffMore = itemView.findViewById(R.id.textViewSaleOffsMore);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickRecyclerView.onClick(getAdapterPosition());
+                }
+            });
         }
+    }
+    public void setOnItemClickListener(OnItemClickRecyclerView onItemClickListener){
+        this.onItemClickRecyclerView = onItemClickListener;
     }
 }

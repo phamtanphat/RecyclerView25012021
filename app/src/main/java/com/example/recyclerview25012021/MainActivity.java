@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,5 +57,12 @@ public class MainActivity extends AppCompatActivity {
 
         mFoodyAdapter = new FoodyAdapter(mArrFoody);
         mRcvFoody.setAdapter(mFoodyAdapter);
+
+        mFoodyAdapter.setOnItemClickListener(new OnItemClickRecyclerView() {
+            @Override
+            public void onClick(int position) {
+                Toast.makeText(MainActivity.this, position + "", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
